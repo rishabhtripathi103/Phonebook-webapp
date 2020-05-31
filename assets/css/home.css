@@ -1,0 +1,102 @@
+body{
+    margin: 0px;
+    background-color: lightgrey;
+}
+
+a{
+    text-decoration: none;
+}
+.container{
+    padding: 10px;
+    background-color: white;
+    margin: 0px auto;
+    height: auto;
+    width: 40vw;
+}
+
+.container>h1{
+    text-align: center;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(88, 88, 88);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+}
+
+.folders-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.folders-container>a>div{
+    border-radius: 10px;
+    height:auto;
+    width: 5vw;
+    background: linear-gradient(to right,rgb(252, 188, 252),rgb(253, 184, 253),rgb(252, 156, 252),violet);
+    margin: 15px;
+    box-shadow: 0px 0px 10px grey;
+    padding:25px;
+    min-width: 100px;
+}
+.folders-container>a>div:hover{
+    box-shadow: none;
+    transition: 0.5s ease-in-out;
+    
+}
+.folders-container h1{
+    color: black;
+}
+
+.fas{
+    margin: 1vw;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    padding:10px
+}
+.list-container{
+    background:linear-gradient(to right,rgb(255, 217, 0),rgb(255, 174, 0),rgb(255, 123, 0)) ;
+    margin: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.folders-container>a>div>h1{
+    letter-spacing: 0.08rem;
+    font-weight: 500;
+    font-size:1.5rem;
+}
+.list-container>h1{
+    color: white;
+}
+
+.fa-plus-circle{
+   
+    color:white;
+    position: absolute;
+    right: 6%;
+    
+    bottom: 5%;
+   
+}
+
+.fa-plus-circle:hover{
+    color:whitesmoke;
+}
+
+@media screen and (max-width:1000px){
+    .container{
+        width: auto;
+    }
+    .folders-container>a>div{
+        display: block;
+        width: 50vw;
+    }
+    .folders-container>a>div h1{
+        position: relative;
+        display: inline-block;
+    }
+
+}

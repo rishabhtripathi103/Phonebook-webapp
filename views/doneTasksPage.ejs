@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+
+        
+
+        <h1>Contacts</h1>
+        <hr>
+        <br>
+        <br>
+        <h1> <i class="fas fa-check-circle" style="color: rgb(9, 248, 224);"></i> Spam Contacts</h1>
+        
+        <!-- List -->
+        <div class="task-list">
+            <!-- Navigators  -->
+            <div class='navigators'>
+                <div style="position: fixed;">
+                    <a href="/flaggedTasks"><div style="background-color: paleturquoise;">Emergency Contacts</div></a>
+                    <a href="/list" ><div style="background-color: rgb(235, 34, 34);margin-top: 10px;">All Contacts</div></a>
+                    <a href="/"><div  style="background-color: purple;margin-top: 10px;">Home</div></a>
+                </div>
+            </div>
+            <ul>
+                <% for (let i of tasks ) { %>
+                <li>
+                    <h1><%= i.taskName%></h1>
+                   
+                    <div class="categoryBox"><p ><%= i.category%></p></div>
+                    <a href="/markDone/?id=<%= i._id %>"><i class="fas fa-check-circle"></i></a>
+                    <a href="/markFlagged/?id=<%= i._id %>"><i class="fab fa-font-awesome-flag"></i></a>
+                    <a href="/markDeleted/?id=<%= i._id %>"><i class="fas fa-window-close"></i></a>
+                    <p style="width: 100%;padding-inline-start: 20px;"><%= i.todoDate%></p>
+                    <hr width="80%">
+                    
+                </li>
+                
+            <%}%>
+            </ul>
+        </div>
+        
+    
+    
+    </div>
+</body>
+</html>

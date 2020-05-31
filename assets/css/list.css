@@ -1,0 +1,182 @@
+body{
+    background: linear-gradient(to bottom,rgb(252, 188, 252),rgb(253, 184, 253),rgb(252, 156, 252),violet);
+    margin: 0px;
+}
+
+.container{
+    width: 50vw;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    min-width: 400px;
+}
+a{
+    text-decoration: none !important;
+}
+.container>h1{
+   
+        text-align: center;
+        margin: 0px;
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(88, 88, 88);
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 0.05rem;
+    
+}
+
+
+.inputs-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container h3{
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+
+.input{
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    padding-inline-start: 20px;
+    box-sizing: border-box;
+    border: none;
+    outline: 0px;
+}
+
+
+h1,h3{
+    color: black;
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:40px;
+    width: 100%;
+}
+
+.buttons button{
+    font-size: 20px;
+    height: 60px;
+    width: 10vw;
+    color: white;
+    background:linear-gradient(to right,rgb(172, 216, 231),lightblue,rgb(113, 213, 247),rgb(38, 189, 240));
+    margin: 0px 5px;
+    min-width: 100px;
+}
+
+.task-list{
+    font-family: sans-serif;
+    
+
+}
+.task-list ul{
+   
+    list-style-type: none;
+    
+    margin: 0px;
+    padding: 0px;
+}
+
+.task-list ul li{
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.task-list ul li h2{
+    text-transform: capitalize;
+}
+.categoryBox{
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    height: 70%;
+    width: 150px;
+    text-align: center;
+    background-color: turquoise;
+    color: white;
+    
+}
+
+.task-list .fas,.task-list .fab{
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: rgb(9, 248, 224);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.fa-check-circle:hover{
+    transition: 0.5s ease-in-out;
+    background-color: white;
+    color:rgb(9, 248, 224) ;
+}
+
+.fa-font-awesome-flag:hover{
+    transition: 0.5s ease-in-out;
+    background-color: white;
+    color: rgb(199, 28, 28);
+}
+
+.fa-window-close:hover{
+    transition: 0.5s ease-in-out;
+    background-color: white;
+    color: black;
+}
+
+.task-list hr{
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+
+
+.navigators{
+    position: absolute;
+    top: 0%;
+    right:0%;
+    border: 0px;
+   
+}
+
+.navigators>div>a>div{
+    height: 60px;
+    width: 60px;
+    font-size: 10px;
+    border: 0px;
+    color: black;
+    border-bottom-right-radius:50% ;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.navigators>div>a>div:hover{
+    box-shadow: none;
+}
+
+@media screen and (max-width:1050px){
+    .container{
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width:600px){
+    .inputs-container{
+        display: block;
+
+    }
+    .inputs-container div{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+    }
+    
+}

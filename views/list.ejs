@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <!-- container -->
+    <div class="container">
+
+        
+
+        <h1>
+            <i class="fas fa-address-book"></i>    
+            PhoneBook
+        </h1>
+        <hr>
+        <!-- Form -->
+        <form class="inputs-container" action="/addTask" method="POST">
+            
+            <h3>Name</h3>
+            <input type="text"  name="taskName" placeholder="Enter Name" class="input">
+            <hr style="width: 100%">
+            <h3>Mobile Number</h3>
+            <input type="text"  name="phoneno" placeholder="Enter Mobile No." class="input">
+            <hr style="width: 100%">
+            <h3>Email</h3>
+            <input type="text"  name="email" placeholder="Enter Email" class="input">
+            <hr style="width: 100%">
+
+                <div style="width: 45%;">
+
+                    <h3>Category</h3>
+                    <select  placeholder="Choose a Category" class="input" name="category">
+                        <option value="">Choose a Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                       
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <hr>
+                <div style="width: 45%;">
+                    <h3>DOB</h3>
+                    <input type="date" class="input" name="todoDate"> 
+
+                </div>
+                <hr style="width: 100%">
+                <div class="buttons">
+                    <button type="submit">Save</button>
+                    <!-- <a href='/deleteTask'><button type="button" style="background-color: orange;">Delete Task</button></a> -->
+                </div>
+                <hr style="width: 100%">
+        </form>
+
+        <!-- List  -->
+        <div class="task-list">
+
+            <!-- Navigators  -->
+            <div class='navigators' style="border: 0px;">
+                <div style="position: fixed;">
+                    <a href="/doneTasks"><div style="background-color: paleturquoise;">Spam Contacts
+                        
+                </div></a>
+                    <a href="/flaggedTasks"><div  style="background-color:rgb(235, 34, 34);margin-top: 10px;">Emergency Contacts
+                       
+                </div></a>
+                <a href="/"><div  style="background-color: purple;margin-top: 10px;">Home</div></a>
+                </div>
+            </div>
+            <ul>
+                <% for (let i of tasks ) { %>
+                <li>
+                    <h2><%= i.taskName%></h2>
+                    
+                    
+
+                    
+                    <% if(i.category == 'Personal') { %>
+                        <div class="categoryBox" style="background-color:rgb(0, 204, 255);"><p><%= i.category%></p></div>
+                    <%} else if(i.category == 'Work') {%>
+                        <div class="categoryBox"  style="background-color:purple;"><p><%= i.category%></p></div>
+                    <%} else if(i.category == 'School') {%>
+                            <div class="categoryBox"  style="background-color:orange;"><p><%= i.category%></p></div>
+                    <%} else if(i.category == 'Cleaning') {%>
+                        <div class="categoryBox"  style="background-color:chartreuse;"><p><%= i.category%></p></div>
+                    <%} else {%>
+                        <div class="categoryBox"  style="background-color:pink;"><p><%= i.category%></p></div>
+                    <%}%>  
+                    <a href="/markDone/?id=<%= i._id %>"><i class="fas fa-check-circle"></i></a>
+                    <a href="/markFlagged/?id=<%= i._id %>"><i class="fab fa-font-awesome-flag"></i></a>
+                    <a href="/markDeleted/?id=<%= i._id %>"><i class="fas fa-window-close"></i></a>
+                    <p style="width: 100%;padding-inline-start: 20px;"><%= i.todoDate%></p>
+                    <hr width="80%">
+                    
+                </li>
+                
+            <%}%>
+            </ul>
+        </div>
+        
+    
+    
+    </div>
+</body>
+</html>
